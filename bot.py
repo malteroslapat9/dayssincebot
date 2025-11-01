@@ -5,6 +5,8 @@ import sqlite3
 from datetime import datetime, timedelta
 import os
 
+TOKEN = os.environ.get("BOT_TOKEN")
+
 # Enable logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -142,7 +144,7 @@ def main():
     init_db()
 
     # Create application
-    application = Application.builder().token(BOT_TOKEN).build()
+    application = Application.builder().token(TOKEN).build()
 
     # Add handlers
     application.add_handler(CommandHandler("start", start_command))
