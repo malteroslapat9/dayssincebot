@@ -142,7 +142,7 @@ def main():
     init_db()
 
     # Create application
-    application = Application.builder().token(TOKEN).build()
+    application = Application.builder().token(BOT_TOKEN).build()
 
     # Add handlers
     application.add_handler(CommandHandler("start", start_command))
